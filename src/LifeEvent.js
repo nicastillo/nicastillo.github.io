@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 
 const LifePath = styled.div`
-padding:50px 0 50px 0;
+padding:35px 0 50px 0;
 
   
   

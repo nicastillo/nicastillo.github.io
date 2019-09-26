@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import compassImg from './compass.svg';
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import './App.css';
 import LifeEvent from './LifeEvent';
 import lifeData from './lifedata.js'
+import LifeEventPicture from './LifeEventPicture';
 
 const AppContainer = styled.div`
   background-color: rosybrown;
@@ -11,9 +12,9 @@ const AppContainer = styled.div`
   grid-template-columns: 40% auto;
   grid-auto-rows: auto;
   grid-template-areas:
-                      'head head head head head'
-                      'foo content content content content'
-                      'foot foot foot foot foot';
+                      'head head head'
+                      'content content pic'
+                      'foot foot foot';
   grid-gap: 10px;
 `;
 
@@ -34,17 +35,6 @@ const CompassLogo = styled.img`
   height: 100px;
 `;
 
-const Picture = styled.div`
-  grid-area: pic;
-  width: 20vw;
-  height: 20vh;
-  min-width: 200px;
-
-  position: fixed;
-  background-color: #fff;
-  margin: 50vh 10vw 30vh 10vw;
-
-`;
 
 
 
@@ -65,7 +55,7 @@ const Footer = styled.div`
 const Content = styled.div`
   min-width:500px;
   grid-area: content;
-  grid-template-areas:'pic main main main main';
+  grid-template-areas:'main main main';
   display:grid;
 `;
 
@@ -99,7 +89,9 @@ class App extends Component {
         <AppHeader>
           <CompassLogo src={compassImg}></CompassLogo>
         </AppHeader>
-        <Picture></Picture>
+        <LifeEventPicture>
+
+        </LifeEventPicture>
         <Content>
 
 

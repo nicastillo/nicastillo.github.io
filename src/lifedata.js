@@ -24,7 +24,7 @@ const events = {
         level: "Major"
 
     },
-    event4: {
+    event10: {
 
         title: "I did something else",
         category: "personal",
