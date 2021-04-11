@@ -1,5 +1,6 @@
 import React from 'react';
-import Modal from '@material-ui/core/Modal';
+import {Modal} from '@material-ui/core';
+import { StarsRounded, AccountCircleRounded} from '@material-ui/icons';
 import { makeStyles } from '@material-ui/core/styles';
 
 import './LifeEvent.css';
@@ -37,21 +38,37 @@ const LifeEvent = (props) => {
         setOpen(false);
     };
 
-    const body = (
+    const getICon = (eventType) => {
+        switch (eventType) {
+            
+            case "school":
+                return <AccountCircleRounded></AccountCircleRounded  >;
+            default:
+                console.log(eventType)
+                return <StarsRounded></StarsRounded>;
+
+        }
+    }
+
+    const modalBody = (
         <div style={modalStyle} className={classes.paper}>
           <h2 id="simple-modal-title">{props.details.title}</h2>
           <div className="modalWrapper">
+            
+
             <img src={props.details.imagePath}/>
 
             <p id="simple-modal-description">
             {props.details.description}
             </p>
+            <span>Next</span>
           </div>
         </div>
       );
     return (
         <div className="event">
             <div className="event-lifeline"></div>
+            {getICon(props.details.category)}
             <span className="content" onClick={handleOpen}>{props.details.title}
             </span>
 
@@ -61,7 +78,7 @@ const LifeEvent = (props) => {
                 aria-labelledby="simple-modal-title"
                 aria-describedby="simple-modal-description"
             >
-                {body}
+                {modalBody}
             </Modal>
 
         </div>

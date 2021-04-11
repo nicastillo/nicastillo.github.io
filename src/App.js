@@ -1,4 +1,5 @@
 import logo from './images/compass.svg';
+
 import lifeData from './data/lifedata.json';
 import React, { useState, useEffect } from 'react';
 import LifeEvent from './LifeEvent';
@@ -27,4 +28,7 @@ function App() {
   );
 }
 
+
+//Icon by <a href="https://freeicons.io/profile/3">freeicons</a> on <a href="https://freeicons.io">freeicons.io</a>
+    
 export default App;

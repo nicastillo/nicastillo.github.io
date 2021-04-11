@@ -33,11 +33,15 @@
     width: 100%;
     position: relative;
   }
+  .LifePathWrapper .event-list .event img {
+    width: 16px;
+    padding-right: 10px;
+  }
   .LifePathWrapper .event-list .event:not(:last-child) .event-lifeline {
     position: absolute;
     margin-left: -20px;
-    margin-top: 18px;
-    border-left: 3px solid #BABABA;
+    margin-top: 10px;
+    border-left: 4px solid #BABABA;
     height: 100%;
   }
   .LifePathWrapper .event-list .event .content {
@@ -56,8 +60,8 @@
     display: inline-block;
     background-color: #BABABA;
     position: absolute;
-    margin-top: 8px;
-    left: -24px;
+    margin-top: 5px;
+    left: -23px;
   }
   .LifePathWrapper .event-list .event .content:before:hover{
     background-color: #000;

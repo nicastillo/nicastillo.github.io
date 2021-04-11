@@ -1,7 +1,7 @@
 {
     "event1": {
         "title": "Born",
-        "category": "personal",
+        "category": "school",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "imagePath": "../images/forest.jpeg",
         "level": "Major"
@@ -9,14 +9,14 @@
     },
     "event2": {
         "title": "Pre-school",
-        "category": "personal",
+        "category": "school",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "level": "Minor"
 
     },
     "event3": {
         "title": "Start Primary School",
-        "category": "personal",
+        "category": "school",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
         "level": "Major"
 
