@@ -5,9 +5,18 @@ import React, { useState, useEffect } from 'react';
 import LifeEvent from './LifeEvent';
 import './App.css';
 
-function App() {
+/** Theme Colors
+ * Dark - #262329
+ * Dark-light - #635D69
+ * Grey - #BABABA 
+ * Light - #fff
+ * OFfwhite - #f8f8ff
+*/
 
-  const [events, setEvents] = useState(lifeData);
+function App() {
+  let lifeDataEvents = lifeData.events;
+  const [events] = useState(lifeDataEvents);
+  
   useEffect(() => {
     // Update the document title using the browser API
     //document.title = `You clicked ${events} times`;
@@ -20,7 +29,7 @@ function App() {
       <div className="Main">
         <div className="LifePathWrapper">
           <div className="event-list">
-            {Object.keys(events).map(key => <LifeEvent key={key} details={events[key]} />)}
+            {events.map((item,index) => <LifeEvent key={index} details={item} />)}
             </div>
         </div>
       </div>

@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #262329;
+  background-color: #796388;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +26,7 @@
 
 
 .Main {
-  background-color: #635D69;
+  background-color: #f8f8ff;
   display: flex;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
@@ -37,11 +37,11 @@
 .LifePathWrapper {
   width: 400px;
   border-radius: 2px;
-  background-color: #635D69;
+  background-color: #f8f8ff;
   margin:0 auto;
 }
 .LifePathWrapper .event-list {
-  padding: 10px 20px;
+  padding: 10px 10px;
   margin-left: 50px;
 }
 @keyframes App-logo-spin {

@@ -1,7 +1,8 @@
 import React from 'react';
 import {Modal} from '@material-ui/core';
-import { StarsRounded, AccountCircleRounded} from '@material-ui/icons';
-import { makeStyles } from '@material-ui/core/styles';
+import { StarRateRounded, WorkRounded, SchoolRounded} from '@material-ui/icons';
+import {withStyles, makeStyles } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
 
 import './LifeEvent.css';
 
@@ -16,6 +17,19 @@ const LifeEvent = (props) => {
             transform: `translate(-${top}%, -${left}%)`,
         };
     }
+
+    const StyledButton = withStyles({
+        root: {
+          background: '#796388',
+          '&:hover': {
+            background: "#615B7D",
+         },
+        },
+        label: {
+          textTransform: 'capitalize',
+        },
+      })(IconButton);
+ 
     const useStyles = makeStyles((theme) => ({
         paper: {
           position: 'absolute',
@@ -25,7 +39,12 @@ const LifeEvent = (props) => {
           boxShadow: theme.shadows[5],
           padding: theme.spacing(2, 4, 3),
         },
+        small: {
+            width: 30,
+            height: 30,
+        }
     }));
+        
     const classes = useStyles();
   // getModalStyle is not a pure function, we roll the style only on the first render
     const [modalStyle] = React.useState(getModalStyle);
@@ -42,10 +61,12 @@ const LifeEvent = (props) => {
         switch (eventType) {
             
             case "school":
-                return <AccountCircleRounded></AccountCircleRounded  >;
+                return <SchoolRounded style={{ color: "#f8f8ff" }}></SchoolRounded>;
+
+            case "work":
+                return <WorkRounded style={{ color: "#f8f8ff" }}></WorkRounded>;
             default:
-                console.log(eventType)
-                return <StarsRounded></StarsRounded>;
+                return <StarRateRounded style={{ color: "#f8f8ff" }}></StarRateRounded>;
 
         }
     }
@@ -56,7 +77,7 @@ const LifeEvent = (props) => {
           <div className="modalWrapper">
             
 
-            <img src={props.details.imagePath}/>
+            <img src={props.details.imagePath} alt={props.details.title}/>
 
             <p id="simple-modal-description">
             {props.details.description}
@@ -68,7 +89,11 @@ const LifeEvent = (props) => {
     return (
         <div className="event">
             <div className="event-lifeline"></div>
-            {getICon(props.details.category)}
+            <StyledButton size="small">
+                {getICon(props.details.category)}
+            </StyledButton>
+            
+            
             <span className="content" onClick={handleOpen}>{props.details.title}
             </span>
 
