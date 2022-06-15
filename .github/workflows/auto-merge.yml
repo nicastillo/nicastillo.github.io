@@ -23,8 +23,8 @@ jobs:
               event: 'APPROVE',
               body: '🚀',
             })
-      - name: Approve and comment 'woo' Dependabot PRs for patch versions
-        if: ${{github.event.deployment_status["state"] == 'success'}}
+      - name: Adds auto-merged label
+        if: ${{github.event.deployment_status.state == 'success'}}
         uses: actions/github-script@v5
         with:
           script: |
