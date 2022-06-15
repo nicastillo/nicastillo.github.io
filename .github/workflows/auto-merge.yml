@@ -23,8 +23,22 @@ jobs:
               event: 'APPROVE',
               body: '🚀',
             })
+      - name: Merge PR
+        if: ${{steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
+        uses: actions/github-script@v5
+        with:
+          script: |
+            const pullRequest = context.payload.workflow_run.pull_requests[0]
+            const repository = context.repo
+
+            await github.rest.pulls.merge({
+              merge_method: "merge",
+              owner: repository.owner,
+              pull_number: pullRequest.number,
+              repo: repository.repo,
+            })
       - name: Adds auto-merged label
-        if: ${{github.event.deployment_status.state == 'success'}}
+        if: ${{github.event.pull_request.merged == true}}
         uses: actions/github-script@v5
         with:
           script: |
