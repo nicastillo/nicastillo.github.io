@@ -13,7 +13,7 @@ jobs:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
       - name: Approve and comment 'woo' Dependabot PRs for patch versions
         if: ${{steps.metadata.outputs.update-type == 'version-update:semver-patch'}}
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             await github.rest.pulls.createReview({
@@ -24,7 +24,7 @@ jobs:
               body: '🚀',
             })
       - name: Merge PR
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             await github.rest.pulls.merge({
