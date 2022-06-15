@@ -34,7 +34,6 @@ jobs:
               repo: context.repo.repo,
             })
       - name: Adds auto-merged label
-        if: ${{github.event.pull_request.merged == true}}
         uses: actions/github-script@v5
         with:
           script: |
