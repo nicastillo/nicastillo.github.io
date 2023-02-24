@@ -34,7 +34,7 @@ jobs:
               repo: context.repo.repo,
             })
       - name: Adds auto-merged label
-        uses: actions/github-script@v5
+        uses: actions/github-script@v6
         with:
           script: |
             await github.rest.issues.addLabels({
